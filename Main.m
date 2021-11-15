@@ -25,20 +25,25 @@ filePath = pwd
     end
         
     inputData = readtable([ filePath '/' 'dataOH.csv' ]); %Naètení datového souboru 
-    numberRecords = size( inputData, 1 ); % Zmìnit dle nutnosti  
+    numberRecords = size( inputData, 1 ) % Zmìnit dle nutnosti  
+
+    myModelData = MyModel(inputData)
+  
+
+
 
     
-    for idx = 1:numberRecords
-        
-    
-        %% Urèení výstupu modelu pro 1 objekt
-        [ targetSeries, predictedSeries ] = MyModel( inputData ); %Výstup modelu (predikce poètu medaili)
+%     for idx = 1:numberRecords
+%         
+%     
+%         %% Urèení výstupu modelu pro 1 objekt
+%         [ targetSeries, predictedSeries ] = MyModel( inputData ); %Výstup modelu (predikce poètu medaili)
+% 
+%         
+%         %% Vyhodnocení modelu
+%         [ mae, mse, rmse ] = GetScoreOH( targetSeries, predictedSeries );
 
-        
-        %% Vyhodnocení modelu
-        [ mae, mse, rmse ] = GetScoreOH( targetSeries, predictedSeries );
-
-    end
+%     end
 
 
 end
