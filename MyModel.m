@@ -1,28 +1,39 @@
-function [ targetSeries, predictedSeries ] = MyModel( data )
-%Do této funkce implementujte váš vıslednı model pro predikci/regresi a
-%veškeré algoritmy pro pøedzpracování dat.
+function [ targetSeries, predictedSeries, neco ] = MyModel( data )
+%Do tÃ©to funkce implementujte vÃ¡Å¡ vÃ½slednÃ½ model pro predikci/regresi a
+%veÅ¡kerÃ© algoritmy pro pÃ¸edzpracovÃ¡nÃ­ dat.
 
-%Vstup:             data:           vstupní surová data reprezentující 1
-%objekt (1 èasovou øadu, 1 pacienta, 1 obrázek, apod.). 
+%Vstup:             data:           vstupnÃ­ surovÃ¡ data reprezentujÃ­cÃ­ 1
+%objekt (1 Ã¨asovou Ã¸adu, 1 pacienta, 1 obrÃ¡zek, apod.). 
+date = data.Year;
+rok = unique(date);
+l = length(rok);
+neco = zeros(l,4);
+tymy = summer.NOC;
+tym = unique(tymy);
+k
+for i = 1:l
+    for 
+    [gold, silver, bronze, all] = sortingData(data, "USA", rok(i))   
 
-[gold, silver, bronze, all] = sortingData(data, "CZE", 2000);   
+    targetSeries = [gold, silver, bronze, all]
+    
+    neco(i,:) = targetSeries
+end
 
-targetSeries = [gold, silver, bronze, all];
 
 
+%VÃ½stup:            targetSeries:         "Ã¨asovÃ¡ Ã¸ada" zaznamenanÃ½ch poÃ¨tÃ¹
+%medaili (dle databÃ¡ze) v jednotlivÃ½ch sezonÃ¡ch
+%                   predictedSeries:      "Ã¨asovÃ¡ Ã¸ada" predikovanÃ½ch poÃ¨tÃ¹ medaili dle algoritmu
 
-%Vıstup:            targetSeries:         "èasová øada" zaznamenanıch poètù
-%medaili (dle databáze) v jednotlivıch sezonách
-%                   predictedSeries:      "èasová øada" predikovanıch poètù medaili dle algoritmu
-
-% targetSeries = GetTargetSeries( ... ); % doplnit potøebné vstupní promìnné
+% targetSeries = GetTargetSeries( ... ); % doplnit potÃ¸ebnÃ© vstupnÃ­ promÃ¬nnÃ©
 % predictedSeries = [];
 % 
 % end
 % 
 % function targetSeries = GetTargetSeries( input )
-% %Do této funkce doplòte algoritmus pro urèení vıstupní èasové sekvence
-% %poètù medaili ze surovıch dat, dostupnıch pro jednotlivé jedince.
+% %Do tÃ©to funkce doplÃ²te algoritmus pro urÃ¨enÃ­ vÃ½stupnÃ­ Ã¨asovÃ© sekvence
+% %poÃ¨tÃ¹ medaili ze surovÃ½ch dat, dostupnÃ½ch pro jednotlivÃ© jedince.
 % 
 %     targetSeries = [];
 
