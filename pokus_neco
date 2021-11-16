@@ -1,0 +1,36 @@
+data = readtable('dataOH.csv' );
+
+
+
+
+summer = data(data.Season == "Summer",:);
+date = summer.Year;
+
+rok = unique(date);
+l = length(rok);
+neco = zeros(l,5);
+
+tymy = summer.NOC;
+tym = unique(tymy);
+k = length(tym);
+
+delka = l*k
+neco2 = [delka,4]
+
+
+
+for i = 1:l
+ 
+    for j = 1:k
+        
+        [gold, silver, bronze, all] = sortingData(data, tym(j), rok(i))   
+
+        targetSeries = [gold, silver, bronze, all]
+
+        neco2(j,:) = targetSeries
+    
+    
+    end
+    
+    
+end
