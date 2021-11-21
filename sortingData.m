@@ -5,18 +5,14 @@ function [Gold, Bronze, Silver, countFull] = sortingData(data, team, year)
 date = data(data.Year == year,:);
 
 
-DataSeasonS = date(date.Season == "Summer",:);
-DataSeasonW = date(date.Season == "Winter",:);
+% teamS = data.Team;
 
 
-teamS = DataSeasonS.Team;
-teamW = DataSeasonW.Team;
-
-TeamnameS = unique(teamS);
-TeamnamesW = unique(teamW);
+% TeamnameS = unique(teamS);
 
 
-DataTeamS = DataSeasonS(DataSeasonS.NOC == team,:);
+
+DataTeamS = date(date.NOC == team,:);
 
 
 [Gold,x] = size(DataTeamS(DataTeamS.Medal == "Gold","ID"));
