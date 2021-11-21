@@ -25,12 +25,12 @@ filePath = pwd
     end
         
     inputData = readtable([ filePath '/' 'dataOH.csv' ]); %Naètení datového souboru 
-    numberRecords = size( inputData, 1 ) % Zmìnit dle nutnosti  
+    numberRecords = size( inputData, 1 ); % Zmìnit dle nutnosti  
 
-    myModelData = MyModel(inputData)
+    myModelData = MyModel(inputData);
   
 
-
+    
 
     
 %     for idx = 1:numberRecords
